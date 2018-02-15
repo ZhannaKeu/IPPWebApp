@@ -1,0 +1,52 @@
+body {
+    font-family: Verdana;
+    font-size: 14px;
+    margin: 10px 50px 10px 50px;
+    padding: 0px;
+    color: #2c6932;
+}
+
+h1 {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.tableBody {
+    width: 100%;
+}
+
+.menuButton {
+    font-family: Verdana;
+    font-size: 14px;
+    border: 0px;
+    text-align: center;
+    width: 150px;
+    height: 20px;
+    background: white;
+    color: #2c6932;
+}
+
+hr {
+    color: #2c6932;
+    height: 5px;
+}
+
+.commandButton {
+    color: #2c6932;
+    font-family: Verdana;
+    font-size: 14px;
+}
+
+.tableView {
+    border-width: 2px;
+    border-color: #2c6932;
+    font-family: Verdana;
+    font-size: 14px;
+}
+
+.tableHeaderRow{
+    background:#2c6932;
+    color: white;
+    text-align: center
+}
+
