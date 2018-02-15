@@ -63,7 +63,6 @@
 <div class="login-box">
     <h1>Авторизация</h1>
     <form>
-        <p></p>
         <p align="left">Логин</p>
         <input type="text" name= "Логин" placeholder="Введите логин">
         <p align="left"> Пароль</p>
