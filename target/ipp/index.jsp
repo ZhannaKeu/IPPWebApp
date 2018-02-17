@@ -1,4 +1,4 @@
-
+﻿
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -14,14 +14,16 @@
         }
         .shadowtext {
             text-shadow: #B0E0E6 2px 2px 0, #B0E0E6 2px -2px 0,
-            #B0E0E6 -2px 2px 0, #B0E0E6 -2px -2px 0;
+						 #B0E0E6 -2px 2px 0, #B0E0E6 -2px -2px 0;
             color: black;
+			pozition: fixed;
             font-size: 3em;
         }
         .login-box{
             width: 380px;
             height: 240px;
             text-align: center;
+			pozition: fixed;
             background: rgba(0,0,0,0.5);
             color:#fff;
             border-radius: 4px;
@@ -30,7 +32,6 @@
         }
         h1{
             margin:0;
-            /*padding:0,0,20px;*/
             text-align: center;
             font-size:22px;
         }
@@ -44,7 +45,8 @@
             width:100%;
             margin-bottom:20px;
         }
-        .login-box input[type="text"], input [type="password"]
+
+        .loginInputText
         {
             border:none;
             border-bottom: 1px solid #fff;
@@ -54,21 +56,44 @@
             color: #fff;
             font-size:16px;
         }
+
+		.loginButton
+		{
+            border: none;
+            outline:none;
+            height:40px;
+            background:white;
+            color:#000000;
+            width: 100px;
+            font-size:15px;
+            border-radius:18px;
+            pozition:center;
+            margin: 10px;
+		}
     </style>
 </head>
 <body>
-<p class="shadowtext" align="center">Индивидуальный<br>
-    план<br>
+<p class="shadowtext" align="center">Электронный<br>
+    индивидуальный план<br>
     преподавателя</p>
 <div class="login-box">
     <h1>Авторизация</h1>
-    <form>
-        <p align="left">Логин</p>
-        <input type="text" name= "Логин" placeholder="Введите логин">
-        <p align="left"> Пароль</p>
-        <input type="text" name= "Пароль" placeholder="Введите пароль">
-        <input type="button" name="button" value= "Вход">
-    </form>
+    <table >
+		<tr>
+			<td><p align="left">Логин</p></td>
+			<td><input type="text" name= "userName" class="loginInputText" placeholder="Введите логин"></td>
+        </tr>
+		<tr>
+			<td><p align="left"> Пароль</p></td>
+			<td><input type="password" name= "password" class="loginInputText" placeholder="Введите пароль"></td>
+		</tr>
+        <tr>
+            <td colspan="2" style="text-align: center">
+                <input type="submit" name="action" class="loginButton" value= "Вход">
+            </td>
+        </tr>
+    </table>
+
 </div>
 </body>
 </html>
