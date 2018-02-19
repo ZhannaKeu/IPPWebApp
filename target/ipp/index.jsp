@@ -1,5 +1,7 @@
 ﻿
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.ResourceBundle" %>
+<% ResourceBundle resourceBundle = ResourceBundle.getBundle("i18n", response.getLocale());%>
 <html>
 <head>
     <meta charset= "UTF-8"/>
@@ -75,24 +77,30 @@
 <body>
 <p class="shadowtext" align="center">Электронный<br>
     индивидуальный план<br>
-    преподавателя</p>
+    работы преподавателя</p>
 <div class="login-box">
     <h1>Авторизация</h1>
-    <table >
-		<tr>
-			<td><p align="left">Логин</p></td>
-			<td><input type="text" name= "userName" class="loginInputText" placeholder="Введите логин"></td>
-        </tr>
-		<tr>
-			<td><p align="left"> Пароль</p></td>
-			<td><input type="password" name= "password" class="loginInputText" placeholder="Введите пароль"></td>
-		</tr>
-        <tr>
-            <td colspan="2" style="text-align: center">
-                <input type="submit" name="action" class="loginButton" value= "Вход">
-            </td>
-        </tr>
-    </table>
+    <form name="login" action="controller" method="post">
+        <table >
+            <tr>
+                <td><p align="left">Логин</p></td>
+                <td><input type="text" name= "userName" class="loginInputText" placeholder="Введите логин"></td>
+            </tr>
+            <tr>
+                <td><p align="left"> Пароль</p></td>
+                <td><input type="password" name= "password" class="loginInputText" placeholder="Введите пароль"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center">
+                    <input type="hidden" name="action" value="login">
+                    <input type="submit" name="submit" class="loginButton" value= "Вход">
+                </td>
+                <td style="text-align: right">
+                    <t:locale path="/index.jsp"/>
+                </td>
+            </tr>
+        </table>
+    </form>
 
 </div>
 </body>

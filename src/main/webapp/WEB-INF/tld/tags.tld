@@ -9,9 +9,23 @@
     <display-name>my tags</display-name>
     <tlib-version>1.0</tlib-version>
     <short-name>myTags</short-name>
-    <!--<tag-file>-->
-        <!--<name>menu</name>-->
-        <!--<path>/WEB-INF/tags/menu.tag</path>-->
-    <!--</tag-file>-->
+
+    <tag-file>
+        <name>menu</name>
+        <path>/WEB-INF/tags/menu.tag</path>
+    </tag-file>
+    <tag-file>
+        <name>horizontalMenu</name>
+        <path>/WEB-INF/tags/horizontalMenu.tag</path>
+    </tag-file>
+    <tag-file>
+        <name>header</name>
+        <path>/WEB-INF/tags/header.tag</path>
+    </tag-file>
+    <tag-file>
+        <name>footer</name>
+        <path>/WEB-INF/tags/footer.tag</path>
+    </tag-file>
+
 
 </taglib>

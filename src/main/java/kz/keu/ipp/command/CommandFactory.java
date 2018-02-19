@@ -22,10 +22,9 @@ public class CommandFactory {
 
     protected Map defaultMap() {
         commandMap = new HashMap<String, Command>();
-
-   //     commandMap.put("login", new LoginCommand());
-    //    commandMap.put("signIn", new SignInCommand());
-    //    commandMap.put("goto", new GoToPageCommand());
+        commandMap.put("login", new LoginCommand());
+        //    commandMap.put("signIn", new SignInCommand());
+        //    commandMap.put("goto", new GoToPageCommand());
 
         return commandMap;
     }
