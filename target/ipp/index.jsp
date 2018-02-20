@@ -1,11 +1,9 @@
-﻿
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.ResourceBundle" %>
 <% ResourceBundle resourceBundle = ResourceBundle.getBundle("i18n", response.getLocale());%>
 <html>
 <head>
-    <meta charset= "UTF-8"/>
-    <title>Авторизация</title>
+    <title><%=resourceBundle.getString("title")%></title>
     <style>
         body {
             margin: 0 auto;
@@ -75,26 +73,28 @@
     </style>
 </head>
 <body>
-<p class="shadowtext" align="center">Электронный<br>
-    индивидуальный план<br>
-    работы преподавателя</p>
+<p class="shadowtext" align="center"><%=resourceBundle.getString("app.first")%><br/>
+    <%=resourceBundle.getString("app.second")%><br/><%=resourceBundle.getString("app.third")%><br/></p>
 <div class="login-box">
-    <h1>Авторизация</h1>
+    <h1><%=resourceBundle.getString("login.title")%></h1>
     <form name="login" action="controller" method="post">
         <table >
             <tr>
-                <td><p align="left">Логин</p></td>
-                <td><input type="text" name= "userName" class="loginInputText" placeholder="Введите логин"></td>
+                <td><p align="left"><%=resourceBundle.getString("login.name")%></p></td>
+                <td><input type="text" name= "userName" class="loginInputText"></td>
             </tr>
             <tr>
-                <td><p align="left"> Пароль</p></td>
-                <td><input type="password" name= "password" class="loginInputText" placeholder="Введите пароль"></td>
+                <td><p align="left"><%=resourceBundle.getString("login.password")%></p></td>
+                <td><input type="password" name= "password" class="loginInputText"></td>
+
             </tr>
             <tr>
                 <td colspan="2" style="text-align: center">
                     <input type="hidden" name="action" value="login">
-                    <input type="submit" name="submit" class="loginButton" value= "Вход">
+                    <input type="submit" name="submit" class="loginButton" value= <%=resourceBundle.getString("login.signIn")%>>
                 </td>
+            </tr>
+            <tr>
                 <td style="text-align: right">
                     <t:locale path="/index.jsp"/>
                 </td>

@@ -1,2 +1,4 @@
+<%@ tag import="java.util.ResourceBundle" %>
+<% ResourceBundle resourceBundle = ResourceBundle.getBundle("i18n", response.getLocale());%>
 <hr>
-<h6>@Карагандинский экономический университет</h6>
+<h6><%=resourceBundle.getString("footer")%></h6>
