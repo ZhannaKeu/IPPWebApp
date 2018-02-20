@@ -16,12 +16,15 @@ public class DAOFaculty {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
-            String command = "SELECT id,name FROM Departments WHERE id=?";
+            String command = "SELECT f.Id, n.Ru " +
+                             "FROM Faculty as f " +
+                             "JOIN Name as n ONf.[nameId]=n.Id" +
+                             "WHERE f.Id=?";
             statement = connection.prepareStatement(command);
             statement.setInt(1, id);
             resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                faculty = new Faculty(resultSet.getInt(1), resultSet.getString(2));
+                faculty = new Faculty(resultSet.getInt(1),resultSet.getString(2));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -41,7 +44,9 @@ public class DAOFaculty {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
-            String command = "SELECT id,name FROM Departments";
+            String command = "SELECT f.Id, n.Ru " +
+                             "FROM Faculty as f " +
+                             "JOIN Name as n ONf.[nameId]=n.Id";
             statement = connection.prepareStatement(command);
             resultSet = statement.executeQuery();
             while (resultSet.next()) {
