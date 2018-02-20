@@ -15,7 +15,7 @@ public class DAODepartment {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
-            String command = "SELECT id,name FROM Departments WHERE id=?";
+            String command = "SELECT id,[name] FROM Departments WHERE id=?";
             statement = connection.prepareStatement(command);
             statement.setInt(1, id);
             resultSet = statement.executeQuery();
