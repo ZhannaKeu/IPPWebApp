@@ -16,16 +16,16 @@ CREATE TABLE [dbo].[Name] (
   [RuAbbr] nvarchar(32) COLLATE Cyrillic_General_CI_AS NULL,
   [EnAbbr] nvarchar(32) COLLATE Cyrillic_General_CI_AS NULL,
   [KzAbbr] nvarchar(32) COLLATE Cyrillic_General_CI_AS NULL)
-  
-  CREATE TABLE [dbo].[Organization] (
+
+CREATE TABLE [dbo].[Organization] (
   [Id] int PRIMARY KEY IDENTITY(1, 1) NOT NULL,
   [NameId] int NOT NULL,
   [PlaceId] int NULL,
   [IsEducational] bit CONSTRAINT [DF__Organizat__IsEdu__3C1FE2D6] DEFAULT 0 NOT NULL,
   [IsIdentityDocument] bit CONSTRAINT [DF__Organizat__IsIde__3D14070F] DEFAULT 0 NOT NULL,
   [IsMilitary] bit CONSTRAINT [DF__Organizat__IsMil__14D10B8B] DEFAULT 0 NOT NULL)
-  
-  CREATE TABLE [dbo].[Person] (
+
+CREATE TABLE [dbo].[Person] (
   [Id] int PRIMARY KEY IDENTITY(1, 1) NOT NULL,
   [LastName] nvarchar(32) COLLATE Cyrillic_General_CI_AS NULL,
   [FirstName] nvarchar(32) COLLATE Cyrillic_General_CI_AS NULL,
@@ -59,8 +59,8 @@ CREATE TABLE [dbo].[Name] (
   [FirstNameId] int NULL,
   [MiddleNameId] int NULL,
   [Email] nvarchar(max) COLLATE Cyrillic_General_CI_AS NULL)
-  
-  CREATE TABLE [dbo].[OrganizationStructure] (
+
+CREATE TABLE [dbo].[OrganizationStructure] (
   [Id] int PRIMARY KEY IDENTITY(1, 1) NOT NULL,
   [OrganizationId] int NOT NULL,
   [DepartmentId] int NOT NULL,
@@ -68,38 +68,26 @@ CREATE TABLE [dbo].[Name] (
   [IsFilial] bit CONSTRAINT [DF__Organizat__IsFil__6BB9E75F] DEFAULT 0 NOT NULL,
   [IsChair] bit CONSTRAINT [DF__Organizat__IsCha__575DE8F7] DEFAULT 0 NOT NULL,
   [IsFaculty] bit CONSTRAINT [DF__Organizat__IsFac__5669C4BE] DEFAULT 0 NOT NULL)
-  
-  CREATE TABLE [dbo].[AuthenticationModule] (
-  [Id] int PRIMARY KEY IDENTITY(1, 1) NOT NULL,
-  [AuthenticationId] int NOT NULL,
-  [ModuleId] int NOT NULL,
-  [AccessLevel] int NOT NULL,
-  [OrganizationId] int NULL,
-  [FilialId] int NULL,
-  [OrganizationStructureId] int NULL,
-  [FacultyId] int NULL,
-  [IsUser] bit CONSTRAINT [DF__Authentic__IsUse__5DD5DC5C] DEFAULT 0 NOT NULL,
-  [EducationYearId] int NULL)
-  
-  CREATE TABLE [dbo].[Post] (
+
+CREATE TABLE [dbo].[Post] (
   [Id] int PRIMARY KEY IDENTITY(1, 1) NOT NULL,
   [NameId] int NOT NULL)
-  
-  CREATE TABLE [dbo].[WorkPlace] (
+
+CREATE TABLE [dbo].[WorkPlace] (
   [Id] int PRIMARY KEY IDENTITY(1, 1) NOT NULL,
   [PostId] int NOT NULL,
   [IsActual] bit CONSTRAINT [DF__WorkPlace__IsActu__35A7EF71] DEFAULT 1 NOT NULL,
   [IsInstructor] bit CONSTRAINT [DF__WorkPlace__IsIns__7BD05397] DEFAULT 0 NOT NULL,
   [OrganizationStructureId] int NULL,
   [OrganizationId] int NOT NULL)
-  
-  CREATE TABLE [dbo].[Subject] (
+
+CREATE TABLE [dbo].[Subject] (
   [Id] int PRIMARY KEY IDENTITY(1, 1) NOT NULL,
   [NameId] int NOT NULL,
   [IsTest] bit CONSTRAINT [DF__Subject__IsTest__70099B30] DEFAULT 0 NOT NULL,
   [Code] nvarchar(12) COLLATE Cyrillic_General_CI_AS NULL)
-  
-  CREATE TABLE [dbo].[Work] (
+
+CREATE TABLE [dbo].[Work] (
   [Id] int PRIMARY KEY IDENTITY(1, 1) NOT NULL,
   [PersonId] int NULL,
   [WorkPlaceId] int NOT NULL,
@@ -112,8 +100,8 @@ CREATE TABLE [dbo].[Name] (
   [VacantName] nvarchar(128) COLLATE Cyrillic_General_CI_AS NULL,
   [DateBegin] date NULL,
   [DateEnd] date NULL)
-  
-  CREATE TABLE [dbo].[Education] (
+
+CREATE TABLE [dbo].[Education] (
   [Id] int PRIMARY KEY IDENTITY(1, 1) NOT NULL,
   [PersonId] int NOT NULL,
   [OrganizationId] int NULL,
@@ -142,8 +130,8 @@ CREATE TABLE [dbo].[Name] (
   [Created] datetime2(1) CONSTRAINT [DF__Education__Creat__2EE5E349] DEFAULT sysdatetime() NOT NULL,
   [InformationSourceId] bigint NULL,
   [InformationSourcePersonId] int NULL)
-  
-  CREATE TABLE [dbo].[Group] (
+
+CREATE TABLE [dbo].[Group] (
   [Id] int PRIMARY KEY IDENTITY(1, 1) NOT NULL,
   [EducationProgramId] int NOT NULL,
   [LanguageId] int NOT NULL,
@@ -159,8 +147,8 @@ CREATE TABLE [dbo].[Name] (
   [CustomName] nvarchar(32) COLLATE Cyrillic_General_CI_AS NULL,
   [EducationDirectionId] int NULL,
   [EducationLevelId] int NULL)
-  
-  CREATE TABLE [dbo].[EducationStatus] (
+
+CREATE TABLE [dbo].[EducationStatus] (
   [Id] int PRIMARY KEY IDENTITY(1, 1) NOT NULL,
   [NameId] int NOT NULL,
   [IsEducation] bit CONSTRAINT [DF__Status__IsEducat__1EF99443] DEFAULT 0 NOT NULL,
@@ -169,14 +157,156 @@ CREATE TABLE [dbo].[Name] (
   [IsBegin] bit CONSTRAINT [DF__Education__IsBeg__544C7222] DEFAULT 0 NOT NULL,
   [IsEnd] bit CONSTRAINT [DF__Education__IsEnd__5540965B] DEFAULT 0 NOT NULL,
   [IsCongratulate] bit CONSTRAINT [DF__Education__IsCon__5728DECD] DEFAULT 0 NOT NULL)
-  
-  CREATE TABLE [dbo].[Department] (
+
+CREATE TABLE [dbo].[Department] (
   [Id] int PRIMARY KEY IDENTITY(1, 1) NOT NULL,
   [NameId] int NOT NULL)
-  
-  CREATE TABLE [dbo].[AuthorizationIPPModule](
+
+CREATE TABLE [dbo].[AuthorizationIPPModule](
   [Id] int PRIMARY KEY IDENTITY(1, 1) NOT NULL,
   [PersonId] int CONSTRAINT [Person.Id] NOT NULL,
   [Login] nvarchar(50) NOT NULL,
   [Password] nvarchar(50) NOT NULL,
   [Role] int NOT NULL)
+
+CREATE TABLE [dbo].[AcademicTitle] (
+  [Id] int IDENTITY(1, 1) NOT NULL,
+  [NameId] int NOT NULL
+)
+ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Faculty] (
+  [Id] int IDENTITY(1, 1) NOT NULL,
+  [NameId] int NOT NULL
+)
+ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Name]
+  ADD CONSTRAINT [PK__Name__3214EC0715A53433]
+PRIMARY KEY CLUSTERED ([Id])
+  WITH (
+    PAD_INDEX = OFF,
+    IGNORE_DUP_KEY = OFF,
+    STATISTICS_NORECOMPUTE = OFF,
+    ALLOW_ROW_LOCKS = ON,
+    ALLOW_PAGE_LOCKS = ON)
+  ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[AcademicTitle]
+  ADD CONSTRAINT [PK__Academic__3214EC072AD55B43]
+PRIMARY KEY CLUSTERED ([Id])
+  WITH (
+    PAD_INDEX = OFF,
+    IGNORE_DUP_KEY = OFF,
+    STATISTICS_NORECOMPUTE = OFF,
+    ALLOW_ROW_LOCKS = ON,
+    ALLOW_PAGE_LOCKS = ON)
+  ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Organization]
+  ADD CONSTRAINT [Organization_pk]
+PRIMARY KEY CLUSTERED ([Id])
+  WITH (
+    PAD_INDEX = OFF,
+    IGNORE_DUP_KEY = OFF,
+    STATISTICS_NORECOMPUTE = OFF,
+    ALLOW_ROW_LOCKS = ON,
+    ALLOW_PAGE_LOCKS = ON)
+  ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Faculty]
+  ADD CONSTRAINT [PK__Faculty__3214EC076C5905DD]
+PRIMARY KEY CLUSTERED ([Id])
+  WITH (
+    PAD_INDEX = OFF,
+    IGNORE_DUP_KEY = OFF,
+    STATISTICS_NORECOMPUTE = OFF,
+    ALLOW_ROW_LOCKS = ON,
+    ALLOW_PAGE_LOCKS = ON)
+  ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Post]
+  ADD CONSTRAINT [Post_pk]
+PRIMARY KEY CLUSTERED ([Id])
+  WITH (
+    PAD_INDEX = OFF,
+    IGNORE_DUP_KEY = OFF,
+    STATISTICS_NORECOMPUTE = OFF,
+    ALLOW_ROW_LOCKS = ON,
+    ALLOW_PAGE_LOCKS = ON)
+  ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Subject]
+  ADD CONSTRAINT [PK__Subject__3214EC076E2152BE]
+PRIMARY KEY CLUSTERED ([Id])
+  WITH (
+    PAD_INDEX = OFF,
+    IGNORE_DUP_KEY = OFF,
+    STATISTICS_NORECOMPUTE = OFF,
+    ALLOW_ROW_LOCKS = ON,
+    ALLOW_PAGE_LOCKS = ON)
+  ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[AcademicTitle]
+  ADD CONSTRAINT [AcademicTitle_fk_Name] FOREIGN KEY ([NameId])
+REFERENCES [dbo].[Name] ([Id])
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
+
+ALTER TABLE [dbo].[Organization]
+  ADD CONSTRAINT [Organization_fk_Name] FOREIGN KEY ([NameId])
+REFERENCES [dbo].[Name] ([Id])
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
+
+ALTER TABLE [dbo].[Department]
+  ADD CONSTRAINT [Department_fk_Name] FOREIGN KEY ([NameId])
+REFERENCES [dbo].[Name] ([Id])
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
+
+ALTER TABLE [dbo].[Faculty]
+  ADD CONSTRAINT [Faculty_fk_Name] FOREIGN KEY ([NameId])
+REFERENCES [dbo].[Name] ([Id])
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
+
+ALTER TABLE [dbo].[Post]
+  ADD CONSTRAINT [Post_fk_Name] FOREIGN KEY ([NameId])
+REFERENCES [dbo].[Name] ([Id])
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
+
+ALTER TABLE [dbo].[EducationStatus]
+  ADD CONSTRAINT [Status_fk_Name] FOREIGN KEY ([NameId])
+REFERENCES [dbo].[Name] ([Id])
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
+
+ALTER TABLE [dbo].[Subject]
+  ADD CONSTRAINT [Subject_fk_Name] FOREIGN KEY ([NameId])
+REFERENCES [dbo].[Name] ([Id])
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
+
+ALTER TABLE [dbo].[AuthorizationIPPModule]
+  ADD CONSTRAINT [AuthorizationIPPModule_fk_Person] FOREIGN KEY ([PersonId])
+REFERENCES [dbo].[Person] ([Id])
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
