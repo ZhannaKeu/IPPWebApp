@@ -10,7 +10,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 public class ConnectionPool extends Thread {
-    public static final int DEFAULT_POOL_SIZE = 10;
+    public static final int DEFAULT_POOL_SIZE = 20;
     private static ConnectionPool instance;
     private BlockingQueue<Connection> connectionQueue;
 

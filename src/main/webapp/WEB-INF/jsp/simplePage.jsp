@@ -23,7 +23,31 @@
     </tr>
     <tr>
         <td>
-            Основная рабочая часть
+            <form name="chairForm" action="controller" method="post">
+                <table class="tableView">
+                    <tr class="tableHeaderRow">
+                        <td><%=resourceBundle.getString("id")%>
+                        </td>
+                        <td><%=resourceBundle.getString("chair.name")%>
+                        </td>
+                        <td><%=resourceBundle.getString("faculty.name")%>
+                    </tr>
+                    <c:forEach var="chair" items="${requestScope.chairs}">
+                        <tr>
+                            <td><input type="hidden" name="chairId" value="${chair.id}"></td>
+                            <td><input type="hidden" name="chairName" value="${chair.name}"></td>
+                            <td><input type="hidden" name="facultyName" value="${chair.faculty.name}"></td>
+                     </tr>
+                    </c:forEach>
+                    <tr>
+                        <td colspan="3" style="text-align: left">
+                            <input type="hidden" name="action" value="saveAdmission">
+                            <input type="submit" value="<%=resourceBundle.getString("button.save")%>" name="submit"
+                                   class="commandButton">
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </td>
         <td>
             <t:menu/>
