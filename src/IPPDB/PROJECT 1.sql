@@ -310,3 +310,71 @@ REFERENCES [dbo].[Person] ([Id])
   ON UPDATE NO ACTION
   ON DELETE NO ACTION
 GO
+
+CREATE TABLE [dbo].[TeachingLoad](
+[Id] int IDENTITY NOT NULL,
+[PersonId] int NOT NULL,
+[SemesterId] int NOT NULL,
+[SubjectId] int NOT NULL,
+[AcademicYearId] int NOT NULL,
+[GroupId] int NOT NULL,
+[LecturePlan] int NOT NULL,
+[SeminarPlan] int NOT NULL,
+[LabPlan] int NOT NULL,
+[SSWTPlan] int NOT NULL,
+[ExamPlan] int NOT NULL,
+[PracticePlan] int NOT NULL,
+[DiplomaPlan] int NOT NULL,
+[CourseWorkPlan] int NOT NULL,
+[BoundaryCountedPlan] int NOT NULL,
+[ControlAttendingClassesPlan] int NOT NULL,
+[HistoryKazakhstanPlan] int NOT NULL,
+[StateExamPlan] int NOT NULL,
+[OtherPlan] int NOT NULL
+)
+
+CREATE TABLE [dbo].[AcademicYear](
+[Id] int NOT NULL,
+[Name] varchar(max)
+)
+
+ALTER TABLE [dbo].[AcademicYear]
+	ADD CONSTRAINT [AcademicYearId_PK] 
+PRIMARY KEY CLUSTERED ([Id])
+WITH (
+  PAD_INDEX = OFF,
+  IGNORE_DUP_KEY = OFF,
+  STATISTICS_NORECOMPUTE = OFF,
+  ALLOW_ROW_LOCKS = ON,
+  ALLOW_PAGE_LOCKS = ON)
+ON [PRIMARY]
+  
+  ALTER TABLE [dbo].[TeachingLoad]
+ADD CONSTRAINT [TeachingLoad_fk_AcademicYear] FOREIGN KEY ([AcademicYearId]) 
+  REFERENCES [dbo].[AcademicYear] ([Id]) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+  
+    ALTER TABLE [dbo].[TeachingLoad]
+ADD CONSTRAINT [TeachingLoad_fk_Person] FOREIGN KEY ([PersonId]) 
+  REFERENCES [dbo].[Person] ([Id]) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+  
+    ALTER TABLE [dbo].[TeachingLoad]
+ADD CONSTRAINT [TeachingLoad_fk_Subject] FOREIGN KEY ([SublectId]) 
+  REFERENCES [dbo].[Subject] ([Id]) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+  
+      ALTER TABLE [dbo].[TeachingLoad]
+ADD CONSTRAINT [TeachingLoad_fk_Group] FOREIGN KEY ([GroupId]) 
+  REFERENCES [dbo].[Group] ([Id]) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+  
+  ALTER TABLE [dbo].[AcademicYear]
+ADD CONSTRAINT [AcademicYear_fk_Name] FOREIGN KEY ([Name]) 
+  REFERENCES [dbo].[Name] ([Id]) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
