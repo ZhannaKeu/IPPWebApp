@@ -1,13 +1,13 @@
 package kz.keu.ipp.DAO;
 
+import kz.keu.ipp.constant.Role;
 import kz.keu.ipp.entity.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.LinkedList;
-import java.util.List;
+import java.sql.*;
 
 
 public class DAOUser {
@@ -16,12 +16,14 @@ public class DAOUser {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
-            String command = "SELECT id, person, role, login, password FROM Users WHERE id=?";
+            String command = "SELECT id, PersonId, role, login, password FROM Users WHERE id=?";
             statement = connection.prepareStatement(command);
             statement.setInt(1, id);
             resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                user = new User(resultSet.getInt(1), resultSet.getPerson(2), resultSet.getRole(3), resultSet.getString(4), resultSet.getString(5));
+                user = new User(resultSet.getInt(1), DAOPerson.selectById(connection,resultSet.getInt(2)),
+                        Role.valueOf(resultSet.getString(3)), resultSet.getString(4),
+                                resultSet.getString(5));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -66,7 +68,7 @@ public class DAOUser {
         ResultSet resultSet = null;
         try {
             String command = String.format("INSERT INTO Users (person, role, login, password) VALUES('%s','%s','%s','%s')",
-                    user.getPerson().toString(), user.getRole().toString(), user.getLogin(), user.getPassword()), ;
+                    user.getPerson().toString(), user.getRole().toString(), user.getLogin(), user.getPassword());
             statement = connection.createStatement();
             statement.executeUpdate(command, Statement.RETURN_GENERATED_KEYS);
             resultSet = statement.getGeneratedKeys();
@@ -90,7 +92,7 @@ public class DAOUser {
         ResultSet resultSet = null;
         try {
             String command = String.format("UPDATE Users " +
-                            "SET person = '%s', role = '%s', login = '%s', password = '%s' WHERE id = %d'',
+                            "SET person = '%s', role = '%s', login = '%s', password = '%s' WHERE id = %d'",
                     user.getPerson().toString(), user.getRole().toString(), user.getLogin(), user.getPassword(), user.getId());
             statement = connection.createStatement();
             statement.executeUpdate(command);
