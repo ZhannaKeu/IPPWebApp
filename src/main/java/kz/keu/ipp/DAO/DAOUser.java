@@ -127,5 +127,34 @@ public class DAOUser {
         }
     }
 
+    public static int getUserID(Connection connection, User user) {
+        int result = -1;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            String command = "SELECT id,role FROM Users WHERE login=? AND password=?";
+            statement = connection.prepareStatement(command);
+            statement.setString(1, user.getLogin());
+            statement.setString(2, user.getPassword());
+            resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                result = resultSet.getInt(1);
+                user.setId(result);
+                user.setRole(Role.valueOf(resultSet.getString(2)));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (statement != null) statement.close();
+                if (resultSet != null) resultSet.close();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
+        }
+        user.setId(result);
+        return result;
+    }
+
 
 }
