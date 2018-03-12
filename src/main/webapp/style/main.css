@@ -1,9 +1,22 @@
 body {
-    font-family: Verdana;
+    font-family: Arial, Veranda, sans-serif;
     font-size: 14px;
     margin: 10px 50px 10px 50px;
     padding: 0px;
     color: #2c6932;
+}
+
+.header{
+    background-color:#87CEEB;
+    height:125px
+}
+
+.title-text
+{
+    color: #E0FFFF;
+    text-align: center;
+    padding-left:auto;
+    padding-top: 23px;
 }
 
 h1 {
@@ -15,6 +28,20 @@ h1 {
     width: 100%;
 }
 
+.horizont-menu{
+    background-color:#A9A9A9;
+    height:50px
+}
+
+.horizontalMenuButton{
+    font:bold 20px Arial, Veranda, sans-serif;
+    border: 0px;
+    text-align: center;
+    width: 150px;
+    height: 20px;
+    background: #A9A9A9;
+    color: #E0FFFF;
+}
 .menuButton {
     font-family: Verdana;
     font-size: 14px;
@@ -26,21 +53,16 @@ h1 {
     color: #2c6932;
 }
 
-hr {
-    color: #2c6932;
-    height: 5px;
-}
-
 .commandButton {
     color: #2c6932;
-    font-family: Verdana;
+    font-family: Arial, Veranda, sans-serif;
     font-size: 14px;
 }
 
 .tableView {
     border-width: 2px;
     border-color: #2c6932;
-    font-family: Verdana;
+    font-family: Arial, Veranda, sans-serif;
     font-size: 14px;
 }
 
@@ -50,3 +72,68 @@ hr {
     text-align: center
 }
 
+
+/* styles for index.jsp */
+
+.index_body {
+    margin: 0 auto;
+    background-image: url(../image/aut.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: sans-serif;
+}
+.shadowtext {
+    text-shadow: #B0E0E6 2px 2px 0, #B0E0E6 2px -2px 0,
+    #B0E0E6 -2px 2px 0, #B0E0E6 -2px -2px 0;
+    color: black;
+    pozition: fixed;
+    font-size: 3em;
+}
+.login-box{
+    width: 380px;
+    height: auto;
+    text-align: center;
+    pozition: fixed;
+    background: rgba(0,0,0,0.5);
+    color:#fff;
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+.index_h1{
+    margin:0;
+    text-align: center;
+    font-size:22px;
+}
+.login-box-p{
+    margin: 10px;
+    padding:0;
+    font-weight: bold;
+    color: white;
+}
+.login-box input{
+    margin: 10px;
+    width:100%;
+    margin-bottom:20px;
+}
+.loginInputText{
+    border:none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size:16px;
+}
+.loginButton{
+    border: none;
+    outline:none;
+    height:40px;
+    background:white;
+    color:#000000;
+    width: 100px;
+    font-size:15px;
+    border-radius:18px;
+    pozition:center;
+    margin: 10px;
+}

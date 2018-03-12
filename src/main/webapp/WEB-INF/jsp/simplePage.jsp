@@ -5,19 +5,19 @@
 <%@ taglib uri="/WEB-INF/tld/tags.tld" prefix="t" %>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="style/main.css">
-    <title><%=resourceBundle.getString("admission.catalogTitle")%>
+    <link rel="stylesheet" type="text/css" href="../../style/main.css">
+    <title><%=resourceBundle.getString("title")%>
     </title>
 </head>
 <body>
 <table class="tableBody">
     <tr>
-        <td colspan="2">
-            <t:header/>
+        <td colspan="2" class="header">
+            <t:header />
         </td>
     </tr>
     <tr>
-        <td colspan="2">
+        <td colspan="2" class="horizont-menu" align="right">
             <t:horizontalMenu/>
         </td>
     </tr>
@@ -54,7 +54,7 @@
         </td>
     </tr>
     <tr>
-        <td colspan="2">
+        <td colspan="2" class="horizont-menu">
             <t:footer/>
         </td>
     </tr>
