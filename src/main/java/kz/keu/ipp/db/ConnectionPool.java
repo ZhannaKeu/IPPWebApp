@@ -3,9 +3,7 @@ package kz.keu.ipp.db;
 import kz.keu.ipp.constant.Configuration;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
@@ -14,11 +12,11 @@ public class ConnectionPool extends Thread {
     private static ConnectionPool instance;
     private BlockingQueue<Connection> connectionQueue;
 
-    private ConnectionPool(String driver, String url, int poolSize) throws ClassNotFoundException, SQLException {
+    private ConnectionPool(String driver, String url, String user, String password, int poolSize) throws ClassNotFoundException, SQLException {
         Class.forName(driver);
         connectionQueue = new ArrayBlockingQueue<Connection>(poolSize);
         for (int i = 0; i < poolSize; i++) {
-            Connection connection = DriverManager.getConnection(url);
+            Connection connection = DriverManager.getConnection(url,user,password);
             connectionQueue.offer(connection);
         }
     }
@@ -27,10 +25,12 @@ public class ConnectionPool extends Thread {
         if (instance == null) {
             String driver = Configuration.DB_DRIVER;
             String url = Configuration.DB_URL;
+            String dbUser=Configuration.DB_USER;
+            String dbPassword=Configuration.DB_PASSWORD;
             int poolSizeStr = Configuration.DB_POOL_SIZE;
             int poolSize = (poolSizeStr != 0) ? poolSizeStr : DEFAULT_POOL_SIZE;
             try {
-                instance = new ConnectionPool(driver, url, poolSize);
+                instance = new ConnectionPool(driver, url, dbUser,dbPassword,poolSize);
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
