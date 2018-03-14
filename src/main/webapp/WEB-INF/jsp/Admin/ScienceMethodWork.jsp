@@ -36,17 +36,73 @@
                     </tr>
                     <c:forEach var="chair" items="${requestScope.chairs}">
                         <tr>
-                            <td><input type="hidden" name="number" value="${chair.number}"></td>
-                            <td><input type="hidden" name="typeofwork" value="${chair.typeofwork}"></td>
-                            <td><input type="hidden" name="units" value="${chair.units}"></td>
-                            <td><input type="hidden" name="clock" value="${chair.clock}"></td>
-                     </tr>
+                            <td><input type="hidden" name="Номер"
+                                    value="${chair.number}"></td>
+                            <td><input type="hidden" name="Вид работы"
+                                    value="${chair.typeofwork}"></td>
+                            <td><input type="hidden" name="Единицы измерения"
+                                    value="${chair.units}"></td>
+                            <td><input type="hidden" name="Нормы времени в часах"
+                                    value="${chair.clock}"></td>
+                        </tr>
                     </c:forEach>
                     <tr>
                         <td colspan="4" style="text-align: left">
+                            <tr>
+                            <td>
                             <input type="hidden" name="action" value="saveAdmission">
-                            <input type="submit" value="<%=resourceBundle.getString("button.save")%>" name="submit"
-                                   class="commandButton">
+                            <input type="submit" value="<%=resourceBundle.getString("button.save")%>" name="Написание и издание: Учебников"
+                                                               class="menuButton">
+                            </td>
+                                                        <td>1 п.л.</td>
+                                                        <td>"".</td>
+                            </tr>
+                            <input type="submit" value="<%=resourceBundle.getString("button.save")%>" name="Написание и издание: Учебных пособий"
+                                                               class="menuButton">
+                            </td>
+                                                        <td>1 п.л.</td>
+                                                        <td>"".</td>
+                            </tr>
+
+                            <tr>
+                            <td>
+                            <input type="submit" value="<%=resourceBundle.getString("button.save")%>" name="Написание и издание: Монографии"
+                                                               class="menuButton">
+                                                        <td>1 п.л.</td>
+                                                        <td>"".</td>
+                            </tr>
+
+                            <tr>
+                            <td>
+                            <input type="submit" value="<%=resourceBundle.getString("button.save")%>" name="Написание и издание: Работ по методики обучения"
+                                                               class="menuButton">
+                                                        <td>1 п.л.</td>
+                                                        <td>"".</td>
+                            </tr>
+
+                            <tr>
+                            <td>
+                            <input type="submit" value="<%=resourceBundle.getString("button.save")%>" name="Подготовка и выступления с сообщениями и докладами: Учебно-методический семинар, научно-методологический"
+                                                                                           class="menuButton">
+                                                        <td>1 Сообщение.</td>
+                                                        <td>"".</td>
+                            </tr>
+
+                            <tr>
+                            <td>
+                            <input type="submit" value="<%=resourceBundle.getString("button.save")%>" name="Подготовка и выступления с сообщениями и докладами: На научно-методической конференции"
+                                                                                           class="menuButton">
+                                                        <td>1 Доклад.</td>
+                                                        <td>"".</td>
+                            </tr>
+
+                            <tr>
+                            <td>
+                            <input type="submit" value="<%=resourceBundle.getString("button.save")%>" name="Подготовка и выступления с сообщениями и докладами: Работа по повышению педагогической квалификации (прохождение внутривузовской системы повышения квалификации и др.)"
+                                                                                           class="menuButton">
+                                                        <td>1 Учебный год.</td>
+                                                        <td>"".</td>
+                            </tr>
                         </td>
                     </tr>
                 </table>
