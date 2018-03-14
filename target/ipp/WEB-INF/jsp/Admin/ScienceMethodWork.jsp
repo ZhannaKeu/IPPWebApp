@@ -22,25 +22,28 @@
         </td>
     </tr>
     <tr>
-        <td width="*">
+        <td>
             <form name="chairForm" action="controller" method="post">
                 <table class="tableView">
                     <tr class="tableHeaderRow">
-                        <td><%=resourceBundle.getString("id")%>
+                        <td><%=resourceBundle.getString("number")%>
                         </td>
-                        <td><%=resourceBundle.getString("chair.name")%>
+                        <td><%=resourceBundle.getString("typeofwork")%>
                         </td>
-                        <td><%=resourceBundle.getString("faculty.name")%>
+                        <td><%=resourceBundle.getString("units")%>
+                        </td>
+                        <td><%=resourceBundle.getString("clock")%>
                     </tr>
                     <c:forEach var="chair" items="${requestScope.chairs}">
                         <tr>
-                            <td><input type="hidden" name="chairId" value="${chair.id}"></td>
-                            <td><input type="hidden" name="chairName" value="${chair.name}"></td>
-                            <td><input type="hidden" name="facultyName" value="${chair.faculty.name}"></td>
+                            <td><input type="hidden" name="number" value="${chair.number}"></td>
+                            <td><input type="hidden" name="typeofwork" value="${chair.typeofwork}"></td>
+                            <td><input type="hidden" name="units" value="${chair.units}"></td>
+                            <td><input type="hidden" name="clock" value="${chair.clock}"></td>
                      </tr>
                     </c:forEach>
                     <tr>
-                        <td colspan="3" style="text-align: left">
+                        <td colspan="4" style="text-align: left">
                             <input type="hidden" name="action" value="saveAdmission">
                             <input type="submit" value="<%=resourceBundle.getString("button.save")%>" name="submit"
                                    class="commandButton">
@@ -49,7 +52,7 @@
                 </table>
             </form>
         </td>
-        <td class="mainMenu">
+        <td>
             <t:menu/>
         </td>
     </tr>
