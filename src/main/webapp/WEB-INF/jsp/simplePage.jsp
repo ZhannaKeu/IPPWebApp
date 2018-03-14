@@ -43,7 +43,7 @@
                         <td colspan="3" style="text-align: left">
                             <input type="hidden" name="action" value="saveAdmission">
                             <input type="submit" value="<%=resourceBundle.getString("button.save")%>" name="submit"
-                                   class="commandButton">
+                                   class="menuButton">
                         </td>
                     </tr>
                 </table>

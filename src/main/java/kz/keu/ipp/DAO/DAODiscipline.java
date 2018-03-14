@@ -15,19 +15,12 @@ public class DAODiscipline {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
-            String command = "SELECT id," +
-                    "subjectId," +
-                    "LanguageId," +
-                    "OrganizationStructureId," +
-                    "IsActual," +
-                    "EducationLevelId," +
-                    "[name]," +
-                    "[code], FROM Disciplines WHERE id=?";
+            String command = "SELECT subjectId, [name], [code], FROM Disciplines WHERE id=?";
             statement = connection.prepareStatement(command);
             statement.setInt(1, id);
             resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                discipline = new Discipline(resultSet.getInt(1), resultSet.getString(2));
+                discipline = new Discipline(resultSet.getInt(1), resultSet.getString(3), resultSet.getString(2));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -47,18 +40,11 @@ public class DAODiscipline {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
-            String command = "SELECT id," +
-                    "subjectId," +
-                    "LanguageId," +
-                    "OrganizationStructureId," +
-                    "IsActual," +
-                    "EducationLevelId," +
-                    "[name]," +
-                    "[code], FROM Disciplines";
+            String command = "SELECT subjectId, [name], [code], FROM Disciplines WHERE id=?";
             statement = connection.prepareStatement(command);
             resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                Discipline discipline = new Discipline(resultSet.getInt(1), resultSet.getString(2));
+                Discipline discipline = new Discipline(resultSet.getInt(1), resultSet.getString(3), resultSet.getString(2));
                 disciplines.add(discipline);
             }
         } catch (SQLException e) {
@@ -71,6 +57,6 @@ public class DAODiscipline {
                 e1.printStackTrace();
             }
         }
-        return discipline;
+        return disciplines;
     }
 }
