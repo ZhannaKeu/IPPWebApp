@@ -42,6 +42,121 @@ OtherFact int NOT NULL,
 IsNew bit  DEFAULT 0 NOT NULL
 )
 
+CREATE TABLE TimeNorms(
+  Id int PRIMARY KEY auto_increment NOT NULL,
+  Code nvarchar (5) NOT NULL,
+  WorkType nvarchar(300) NOT NULL,
+  Unit nvarchar(100) NOT NULL,
+  Hours int NOT NULL,
+  IdTypeWork int not null
+)
+
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01101', 'Подготовка к занятиям: К лекциям по новому (для преподавателя) курсу', '1 час', 2,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01102', 'Подготовка к занятиям: К лекциям по читаемому курсу','1 час', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01103', 'Подготовка к занятиям: К практическим (семинарским) занятиям','1 час', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01104', 'Подготовка к занятиям: К лабораторным работам','1 час', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01105', 'Подготовка к занятиям: К выездным занятиям, туристским походам','1 час', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01106', 'Подготовка к занятиям: К  практическим  занятиям, лабораторным по  новому для преподавателя курсу','1 час', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01107', 'Подготовка к занятиям: СРСП, СРМП, СРДП','1 час', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01108', 'Подготовка к занятиям: Открытому занятию','1 час', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01109', 'Подготовка к занятиям: Подготовка и запись видеолекций','1 час', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01110', 'Подготовка к занятиям: Подготовка и проведение показательных занятий','1 час', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01111', 'Подготовка к занятиям: Подготовка и проведение онлайн-лекций','1 час', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01112', 'Подготовка к занятиям: Ролевая игра, деловая игра','1 час', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01113', 'Подготовка к занятиям: Виртуальные лабораторные работы','1 час', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01114', 'Подготовка к занятиям: Кейс', '1 час', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01115', 'Подготовка к занятиям: Занятия с участием работодателей','1 час', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01201', 'Разработка текстов лекций по новому курсу ','1 час', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01301', 'Разработка заданий: На дипломную работу','1 задание', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01401', 'Написание методических указаний: Для дипломной работы','1 п. л.', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01402', 'Написание методических указаний: Для курсовой работы','1 п. л.', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01403', 'Написание методических указаний: Для практических, семинарских занятий','1 п. л.', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01404', 'Написание методических указаний: Для лабораторных работ','1 п. л.', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01405', 'Написание методических указаний: Сборников упражнений, задач','1 п. л.', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01406', 'Написание методических указаний: Для прохождения учебной (производственной) практики','1 п. л.', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01501', 'Переработка методических указаний: Для дипломной работы','1 п. л.', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01502', 'Переработка методических указаний: Для курсовой работы','1 п. л.', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01503', 'Переработка методических указаний: Для практических, семинарских занятий','1 п. л.', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01504', 'Переработка методических указаний: Для лабораторных работ','1 п. л.', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01505', 'Переработка методических указаний: Сборников упражнений, задач','1 п. л.', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01506', 'Переработка методических указаний: Для прохождения учебной (производственной) практики','1 п. л.', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01601', 'Выпуск силлабусов: новых','1 силлабус', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01602', 'Выпуск силлабусов: переработанных, переизданных','1 силлабус', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01701', 'Разработка тестов: вновь разрабатываемых','100 вопросов', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01702', 'Разработка тестов: перерабатываемых','100 вопросов', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01801', 'Разработка комплектов экзаменационных билетов для ГАК: вновь разрабатываемых','1 комплект', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01802', 'Разработка комплектов экзаменационных билетов для ГАК: перерабатываемых','1 комплект', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01803', 'Разработка комплектов экзаменационных билетов для ГАК: вновь разрабатываемых с задачами','1 комплект', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01804', 'Разработка комплектов экзаменационных билетов для ГАК: перерабатываемых с задачами','1 комплект', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01901', 'Разработка экзаменационных билетов и материалов: вновь разрабатываемых','1 комплект', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01902', 'Разработка экзаменационных билетов и материалов: перерабатываемых','1 комплект', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01903', 'Разработка экзаменационных билетов и материалов: вновь разрабатываемых с задачами','1 комплект', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('01904', 'Разработка экзаменационных билетов и материалов: перерабатываемых с задачами','1 комплект', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('10001', 'Укомплектование УМК: вновь разрабатываемых','1 комплект', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('10002', 'Укомплектование УМК: перерабатываемых','1 комплект', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('10011', 'Разработка и внедрение: Раздаточных информационных средств (лекционных демонстраций, схем, фильмов, имитаторов, электронных   презентаций, слайдов)','1 час лек-ционного и практич. занятия', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('10012', 'Разработка и внедрение: Новых лабораторных работ','1 час лек-ционного занятия', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('10013', 'Разработка и внедрение: Модернизация действующих лабораторных работ','1 работа', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('10041', 'Первичная разработка: Рабочих учебных планов по специальности','1 план', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('10042', 'Первичная разработка: Каталогов дисциплин','1 каталог', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('10043', 'Первичная разработка: Электронного учебника','1 учебник', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('10044', 'Первичная разработка: Контрольно-обучающих программ','1 программ', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('10051', 'Переработка: Учебных планов','1 план', 0,1);
+INSERT INTO TimeNorms(Code,  WorkType,  Unit, Hours, IdTypeWork) 
+VALUES ('10052', 'Переработка: Каталогов дисциплин','1 каталог', 0,1);
+
+
 
 ///---------------------------------------------------------------
 CREATE TABLE Name (

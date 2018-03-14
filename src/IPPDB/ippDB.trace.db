@@ -2519,3 +2519,271 @@ SELECT id,role FROM Users WHERE login=? AND password=? [42102-195]
 org.h2.jdbc.JdbcSQLException: Таблица "USERS" не найдена
 Table "USERS" not found; SQL statement:
 SELECT id,role FROM Users WHERE login=? AND password=? [42102-195]
+2018-03-13 20:18:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "USERS" не найдена
+Table "USERS" not found; SQL statement:
+SELECT id,role FROM Users WHERE login=? AND password=? [42102-195]
+2018-03-14 10:35:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "TIMENORMS" не найден
+Column "TIMENORMS" not found; SQL statement:
+SELECT TIMENORMS [42122-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.command.dml.Select.prepare(Select.java:839)
+	at org.h2.command.Parser.prepareCommand(Parser.java:262)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2018-03-14 10:44:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "UPDATE TIMENORMS SET CODE='1102' WHERE ID=2
+SELECT[*] * FROM  TIMENORMS "
+Syntax error in SQL statement "UPDATE TIMENORMS SET CODE='1102' WHERE ID=2
+SELECT[*] * FROM  TIMENORMS "; SQL statement:
+UPDATE TimeNorms SET code='1102' where id=2
+SELECT * from  TIMENORMS [42000-195]
+2018-03-14 13:36:48 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Неверное количество столбцов
+Column count does not match; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('1114', 'Подготовка к занятиям: Кейс', 0) [21002-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:265)
+	at org.h2.command.Parser.prepareCommand(Parser.java:262)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01101', 'Подготовка к занятиям: К лекциям по новому (для преподавателя) курсу', 2,1) [42102-195]
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01102', 'Подготовка к занятиям: К лекциям по читаемому курсу', 0,1) [42102-195]
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01103', 'Подготовка к занятиям: К практическим (семинарским) занятиям', 0,1) [42102-195]
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01104', 'Подготовка к занятиям: К лабораторным работам', 0,1) [42102-195]
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01105', 'Подготовка к занятиям: К выездным занятиям, туристским походам', 0,1) [42102-195]
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01106', 'Подготовка к занятиям: К  практическим  занятиям, лабораторным по  новому для преподавателя курсу', 0,1) [42102-195]
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01107', 'Подготовка к занятиям: СРСП, СРМП, СРДП', 0,1) [42102-195]
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01108', 'Подготовка к занятиям: Открытому занятию', 0,1) [42102-195]
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01109', 'Подготовка к занятиям: Подготовка и запись видеолекций', 0,1) [42102-195]
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01110', 'Подготовка к занятиям: Подготовка и проведение показательных занятий', 0,1) [42102-195]
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01111', 'Подготовка к занятиям: Подготовка и проведение онлайн-лекций', 0,1) [42102-195]
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01112', 'Подготовка к занятиям: Ролевая игра, деловая игра', 0,1) [42102-195]
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01113', 'Подготовка к занятиям: Виртуальные лабораторные работы', 0,1) [42102-195]
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01114', 'Подготовка к занятиям: Кейс', 0) [42102-195]
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01115', 'Подготовка к занятиям: Занятия с участием работодателей', 0,1) [42102-195]
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01201', 'Разработка текстов лекций по новому курсу ', 0,2) [42102-195]
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01301', 'Разработка заданий: На дипломную работу', 0,3) [42102-195]
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01401', 'Написание методических указаний: Для дипломной работы', 0,4) [42102-195]
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01402', 'Написание методических указаний: Для курсовой работы', 0,4) [42102-195]
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01403', 'Написание методических указаний: Для практических, семинарских занятий', 0,4) [42102-195]
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01404', 'Написание методических указаний: Для лабораторных работ', 0,4) [42102-195]
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01405', 'Написание методических указаний: Сборников упражнений, задач', 0,4) [42102-195]
+2018-03-14 13:48:03 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "TIMENORMS" не найдена
+Table "TIMENORMS" not found; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01406', 'Написание методических указаний: Для прохождения учебной (производственной) практики', 0,4) [42102-195]
+2018-03-14 13:48:14 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Неверное количество столбцов
+Column count does not match; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01114', 'Подготовка к занятиям: Кейс', 0) [21002-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:265)
+	at org.h2.command.Parser.prepareCommand(Parser.java:262)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2018-03-14 15:30:50 jdbc[5]: null
+org.h2.message.DbException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 14 more
+2018-03-14 15:31:04 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "TIMENORMS[*]"; ожидалось "TRUNCATE, {"
+Syntax error in SQL statement "TIMENORMS[*]"; expected "TRUNCATE, {"; SQL statement:
+TIMENORMS [42001-195]
+2018-03-14 15:42:12 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Значение слишком длинное для поля "WORKTYPE NVARCHAR(100) NOT NULL": "STRINGDECODE('\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430 \u0438 \u0432\u043d\u0435\u0434\u0440\u0435\u043d\u04... (147)"
+Value too long for column "WORKTYPE NVARCHAR(100) NOT NULL": "STRINGDECODE('\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430 \u0438 \u0432\u043d\u0435\u0434\u0440\u0435\u043d\u04... (147)"; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('10011', 'Разработка и внедрение: Раздаточных информационных средств (лекционных демонстраций, схем, фильмов, имитаторов, электронных   презентаций, слайдов)', 0,1) [22001-195]
+2018-03-14 15:43:42 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Неверное количество столбцов
+Column count does not match; SQL statement:
+INSERT INTO TimeNorms(Code,  WorkType,  Hours, IdTypeWork) 
+VALUES ('01114', 'Подготовка к занятиям: Кейс', 0) [21002-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:265)
+	at org.h2.command.Parser.prepareCommand(Parser.java:262)
+	at org.h2.engine.Session.prepareLocal(Session.java:573)
+	at org.h2.engine.Session.prepareCommand(Session.java:514)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:165)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2018-03-14 18:38:49 jdbc[6]: null
+org.h2.message.DbException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:185)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:127)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 14 more
